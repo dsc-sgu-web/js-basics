@@ -2,7 +2,10 @@ const bank = {
   transactions: [],
 
   addTransaction(amount) {
-    const id = Math.max(this.transactions.map((t) => t.id)) + 1;
+    const id =
+      this.transactions.length === 0
+        ? 1
+        : Math.max(...this.transactions.map((t) => t.id)) + 1;
     this.transactions.push({ id, amount });
     this.render();
   },
