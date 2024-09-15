@@ -58,6 +58,9 @@ const bank = {
 const expenseForm = document.getElementById("add-expense-form");
 const expenseInput = document.querySelector("#add-expense-form > input");
 
+const revenueForm = document.getElementById("add-revenue-form");
+const revenueInput = document.querySelector("#add-revenue-form > input");
+
 const onSubmitForm = (transactionType) => (e) => {
   e.preventDefault();
 
@@ -90,8 +93,4 @@ const onSubmitForm = (transactionType) => (e) => {
 };
 
 expenseForm.addEventListener("submit", onSubmitForm("expense"));
-
-const revenueForm = document.getElementById("add-revenue-form");
-const revenueInput = document.querySelector("#add-revenue-form > input");
-
 revenueForm.addEventListener("submit", onSubmitForm("revenue"));
