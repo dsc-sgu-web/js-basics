@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Денежный калькулятор</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="block" id="expenses">
+        <h2>Доходы</h2>
+        <ul></ul>
+        <form id="add-expense-form">
+          <input type="text" />
+          <button type="submit">Добавить</button>
+        </form>
+      </div>
+      <div class="block" id="revenues">
+        <h2>Расходы</h2>
+        <ul></ul>
+        <form id="add-revenue-form">
+          <input type="text" />
+          <button type="submit">Добавить</button>
+        </form>
+      </div>
+      <div class="block">
+        <h2>Баланс</h2>
+        <span class="balance" id="balance">0₽</span>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

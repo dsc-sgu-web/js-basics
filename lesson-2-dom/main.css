@@ -1,0 +1,46 @@
+body {
+  font-family: "Jost", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.block > ul {
+  margin: 5px 0;
+}
+
+.block > h2 {
+  margin: 0;
+}
+
+.transaction {
+  padding: 10px;
+}
+
+.transaction:hover {
+  cursor: pointer;
+  background: #eee;
+  text-decoration: line-through;
+}
+
+.green {
+  color: #4ad048;
+}
+
+.red {
+  color: #d04a48;
+}
