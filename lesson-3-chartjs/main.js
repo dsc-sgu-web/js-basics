@@ -1,16 +1,18 @@
-const data = [
-  { month: "Сентябрь", price: 300 },
-  { month: "Октябрь", price: 250 },
-  { month: "Ноябрь", price: 500 },
-  { month: "Декабрь", price: 450 },
-];
+import "./style.css";
+import Chart from "chart.js/auto";
+import { getData } from "./data";
 
-new Chart(document.getElementById("prices"), {
+const data = getData();
+
+new Chart(document.getElementById("prices").getContext("2d"), {
   type: "line",
   data: {
     labels: data.map((row) => row.month),
-    datasets: {
-      data: data.map((row) => row.price),
-    },
+    datasets: [
+      {
+        label: "Цена",
+        data: data.map((row) => row.price),
+      },
+    ],
   },
 });
