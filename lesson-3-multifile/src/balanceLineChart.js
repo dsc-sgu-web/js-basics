@@ -22,9 +22,6 @@ export function setupBalanceLineChart(bank, canvasId) {
     chart.update();
   };
 
-  bank.addOnChangeEventListener((b) => {
-    changeChart(b);
-  });
-
+  bank.addOnChangeEventListener(changeChart);
   changeChart(bank);
 }
