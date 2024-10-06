@@ -1,6 +1,6 @@
-export function Bank(onChange) {
+export function Bank() {
   this.transactions = [];
-  this.onChange = onChange;
+  this.onChangeEventListeners = [];
 
   this.addTransaction = function (amount) {
     const id =
@@ -9,12 +9,12 @@ export function Bank(onChange) {
         : Math.max(...this.transactions.map((t) => t.id)) + 1;
     this.transactions.push({ id, amount });
 
-    onChange(this);
+    this.onChange();
   };
 
   this.removeTransaction = function (id) {
     this.transactions = this.transactions.filter((t) => t.id !== id);
-    onChange(this);
+    this.onChange();
   };
 
   this.calculateBalance = function () {
@@ -22,5 +22,15 @@ export function Bank(onChange) {
       return 0;
     }
     return this.transactions.map((t) => t.amount).reduce((acc, v) => acc + v);
+  };
+
+  this.addOnChangeEventListener = function (listener) {
+    this.onChangeEventListeners.push(listener);
+  };
+
+  this.onChange = function () {
+    for (const onChange of this.onChangeEventListeners) {
+      onChange(this);
+    }
   };
 }

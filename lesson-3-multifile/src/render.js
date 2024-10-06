@@ -1,4 +1,4 @@
-export function onBankChange(bank) {
+export function renderBank(bank) {
   const expensesUlElement = document.querySelector("#expenses > ul");
   expensesUlElement.innerHTML = "";
 
